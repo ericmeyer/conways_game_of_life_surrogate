@@ -1,3 +1,16 @@
+class Rules
+  def self.should_live_to_next_generation?(cell)
+    case cell.number_of_living_neighbors
+    when 2
+      cell.alive?
+    when 3
+      true
+    else
+      false
+    end
+  end
+end
+
 class Cell
 
   attr_reader :location, :number_of_living_neighbors
@@ -86,23 +99,11 @@ class Board
   def advance_generation
     next_generation = LivingCells.new
     @living_cells.each_potential_living_cell do |cell|
-      next_generation.bring_to_life_at(cell.location) if should_live_to_next_generation?(cell)
+      next_generation.bring_to_life_at(cell.location) if Rules.should_live_to_next_generation?(cell)
     end
     @living_cells = next_generation
   end
 
-  private
-
-  def should_live_to_next_generation?(cell)
-    case cell.number_of_living_neighbors
-    when 2
-      cell.alive?
-    when 3
-      true
-    else
-      false
-    end
-  end
 end
 
 describe Board do
