@@ -1,10 +1,15 @@
 require "game_of_life/board"
+require "mocks/board"
 
 module GameOfLife
 
   describe Board do
     before(:each) do
       @board = Board.new
+    end
+
+    it "implements the methods defined in MockBoard" do
+      Board.should substitute_for(MockBoard)
     end
 
     it "kills a cell with no living neighbors" do
