@@ -1,7 +1,17 @@
 module GameOfLife
   class LivingCells
 
-    Cell = Struct.new(:location, :number_of_living_neighbors, :is_alive)
+    class Cell
+      attr_reader :location, :number_of_living_neighbors
+
+      def initialize(location, number_of_living_neighbors, is_alive)
+        @location, @number_of_living_neighbors, @is_alive = location, number_of_living_neighbors, is_alive
+      end
+
+      def alive?
+        @is_alive
+      end
+    end
 
     def initialize
       @living_locations = Set.new

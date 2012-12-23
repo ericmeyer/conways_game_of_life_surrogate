@@ -19,7 +19,7 @@ module GameOfLife
     def advance_generation
       next_generation = LivingCells.new
       @living_cells.each_potential_living_cell do |cell|
-        next_generation.bring_to_life_at(cell.location) if Rules.should_live_in_next_generation?(cell)
+        next_generation.bring_to_life_at(cell.location) if Rules.alive_in_next_generation?(cell)
       end
       @living_cells = next_generation
     end
