@@ -36,27 +36,13 @@ module GameOfLife
       @board.should_not have_living_cell_at([1, 2])
     end
 
-    xit "has an example" do
-      @board.bring_to_life_at([4, 4])
-      @board.bring_to_life_at([4, 5])
-      @board.bring_to_life_at([4, 6])
-      @board.bring_to_life_at([3, 6])
-      @board.bring_to_life_at([2, 5])
-      200.times do
-        30.times do |row|
-          30.times do |col|
-            if @board.has_living_cell_at?([row, col])
-              print "X"
-            else
-              print '-'
-            end
-          end
-          puts "\n"
-        end
-        @board.advance_generation
-        puts '#' * 30
-        sleep 0.2
-      end
+    it "has living cells" do
+      @board.bring_to_life_at([0, 1])
+      @board.should have_any_living_cells
+    end
+
+    it "has no living cells" do
+      @board.should_not have_any_living_cells
     end
 
   end

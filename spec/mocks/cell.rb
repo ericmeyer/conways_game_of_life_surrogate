@@ -1,3 +1,5 @@
+require "surrogate/rspec"
+
 class MockCell
   Surrogate.endow(self)
   define(:alive?) { false }

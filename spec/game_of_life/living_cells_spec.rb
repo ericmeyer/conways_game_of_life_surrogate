@@ -1,5 +1,5 @@
 require "game_of_life/living_cells"
-require "surrogate/rspec"
+require "mocks/cell"
 
 module GameOfLife
   describe LivingCells do

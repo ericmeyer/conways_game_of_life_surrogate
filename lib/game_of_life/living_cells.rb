@@ -25,6 +25,10 @@ module GameOfLife
       @living_locations.include? location
     end
 
+    def has_any_living_cells?
+      @living_locations.any?
+    end
+
     def each_potential_living_cell(&block)
       potential_living_locations.each do |location|
         yield Cell.new(

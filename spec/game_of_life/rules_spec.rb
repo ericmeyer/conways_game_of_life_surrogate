@@ -1,5 +1,4 @@
 require "game_of_life/rules"
-require "surrogate/rspec"
 require "mocks/cell"
 
 describe GameOfLife::Rules do

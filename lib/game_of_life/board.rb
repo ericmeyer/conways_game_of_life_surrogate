@@ -16,6 +16,10 @@ module GameOfLife
       @living_cells.has_living_cell_at? location
     end
 
+    def has_any_living_cells?
+      @living_cells.has_any_living_cells?
+    end
+
     def advance_generation
       next_generation = LivingCells.new
       @living_cells.each_potential_living_cell do |cell|
