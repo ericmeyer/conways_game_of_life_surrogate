@@ -1,11 +1,17 @@
 require "game_of_life/runner"
 require "game_of_life/board"
+require "surrogate/rspec"
+
+class MockOutputter
+  Surrogate.endow(self)
+  define(:show_board) { |board| }
+end
 
 module GameOfLife
   describe Runner do
 
     before(:each) do
-      @outputer = mock('ConsoleOutputter', show_board: nil)
+      @outputer = MockOutputter.factory
       @board = mock('board', has_any_living_cells?: true, advance_generation: nil)
       @runner = Runner.new(@board, @outputer)
       @runner.stub(:sleep)
@@ -13,8 +19,8 @@ module GameOfLife
 
     it "outputs the board" do
       @board.stub(:has_any_living_cells?).and_return(true, false)
-      @outputer.should_receive(:show_board).with(@board)
       @runner.run
+      @outputer.should have_been_told_to(:show_board).with(@board)
     end
 
     it "advances the board's generation" do
@@ -31,8 +37,8 @@ module GameOfLife
 
     it "shows the board until there are no living cells" do
       @board.stub(:has_any_living_cells?).and_return(true, true, false)
-      @outputer.should_receive(:show_board).exactly(2).times
       @runner.run
+      @outputer.should have_been_told_to(:show_board).times(2)
     end
 
     xit "has an example" do
