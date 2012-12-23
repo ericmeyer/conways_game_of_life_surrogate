@@ -1,7 +1,7 @@
 module GameOfLife
   class Runner
 
-    TIME_BETWEEN_GENERTIONS=0.25
+    TIME_BETWEEN_GENERATIONS=0.25
 
     def initialize(board, console_outputter)
       @board = board
@@ -12,7 +12,7 @@ module GameOfLife
       while @board.has_any_living_cells?
         @console_outputter.show_board(@board)
         @board.advance_generation
-        sleep(TIME_BETWEEN_GENERTIONS)
+        sleep(TIME_BETWEEN_GENERATIONS)
       end
     end
 

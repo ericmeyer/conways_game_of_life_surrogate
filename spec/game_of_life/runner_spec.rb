@@ -28,7 +28,7 @@ module GameOfLife
       end
 
       it "pauses between loops" do
-        @runner.should_receive(:sleep).with(Runner::TIME_BETWEEN_GENERTIONS)
+        @runner.should_receive(:sleep).with(Runner::TIME_BETWEEN_GENERATIONS)
         @runner.run
       end
     end
@@ -44,7 +44,7 @@ module GameOfLife
       end
 
       it "sleeps between each generation" do
-        @runner.should_receive(:sleep).with(Runner::TIME_BETWEEN_GENERTIONS).exactly(5).times
+        @runner.should_receive(:sleep).with(Runner::TIME_BETWEEN_GENERATIONS).exactly(5).times
         @runner.run
       end
     end
