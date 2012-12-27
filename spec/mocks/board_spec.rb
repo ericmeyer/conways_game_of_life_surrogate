@@ -1,7 +1,10 @@
 require "mocks/board"
 
-# I don't normally test my mocks,
-# but I thought it was useful to show an example of how this is used
+=begin
+ I don't normally test my mocks,
+ but I thought it was useful to show
+ an example of how this is used
+=end
 describe MockBoard do
 
   before(:each) do
