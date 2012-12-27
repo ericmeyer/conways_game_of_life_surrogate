@@ -9,7 +9,7 @@ module GameOfLife
     end
 
     it "implements the methods defined in MockBoard" do
-      Board.should substitute_for(MockBoard)
+      MockBoard.should be_substitutable_for(Board)
     end
 
     it "kills a cell with no living neighbors" do
