@@ -2,6 +2,8 @@
 
 This is an implementation of Conway's Game of Life created on the Global Day of Code Retreat.  It is meant to provide an example migration to using the Surrogate gem from using RSpec dynamic mocks.  The code was originally implemented using RSpec, and afterwards converted to using Surrogate.
 
+Surrogate can be found [here](https://github.com/JoshCheek/surrogate)
+
 ## The Blogs
 
 The examples in this code are explained in a series of blogs.  You can find the blogs providing detailed instructions here:
