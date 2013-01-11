@@ -6,8 +6,8 @@ This is an implementation of Conway's Game of Life created on the Global Day of 
 
 The examples in this code are explained in a series of blogs.  You can find the blogs providing detailed instructions here:
 
- * [Migrating to Surrogate - Part 1](foo.com)
- * [Migrating to Surrogate - Part 1](foo.com)
+ * [Migrating to Surrogate - Part 1](http://blog.8thlight.com/eric-meyer/2013/01/13/migrating_from_rspec_dynamic_mocks_to_surrogate_part1.html)
+ * [Migrating to Surrogate - Part 2](http://blog.8thlight.com/eric-meyer/2013/01/13/migrating_from_rspec_dynamic_mocks_to_surrogate_part2.html)
 
 ## master Branch
 
